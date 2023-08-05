@@ -1,0 +1,22 @@
+===================================================================Jenkins Notes===============================================================================================
+Jenkins Installitation link : https://www.jenkins.io/doc/book/installing/linux/
+sudo apt update
+sudo apt install openjdk-11-jre  (insatll java)
+java --version
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \                          (insatll jenkins) weekly release in the above link.
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+systemctl status jenkins      --- to check jenkins is running or not 
+
+================================================================================================================================================================================
+jenkins generally runs on port 8080 so give access to port 8080 in EC2 security group add inbound rule 
+Run jenkins -- ipofsyatem:8080 (3.111.186.56:8080) on browser
+Now have to unlock jenkins --
+There is a location given in jenkins where password is stored 
+check password -- sudo cat <location given in jenkins>
+
+
