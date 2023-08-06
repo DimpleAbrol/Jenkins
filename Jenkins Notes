@@ -19,4 +19,34 @@ Now have to unlock jenkins --
 There is a location given in jenkins where password is stored 
 check password -- sudo cat <location given in jenkins>
 
+======================================================================================================================================
+
+Declarative Pipeline :
+
+pipeline {
+    agent any                  //run any server
+    stages {
+        stage("Code") {
+            steps{
+            echo "code clone"
+            }
+        }
+        stage("Code Build") {
+            steps{
+                echo "Code Build"
+            }
+        }
+        stage("Code Test") {
+            steps{
+                echo "Code Tested"
+            }
+        }
+        stage("Code Deploy") {
+            steps{
+                echo "Code Deployed"
+            }
+        }
+    }
+}
+
 
